@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="theme-color" content="#ca0000">
+    <link rel="icon" href="logo-s.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>Tabadul - Employee cards registration</title>
+
+    <!-- Includes Bootstrap -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="landing-body">
+    <div class="d-flex con">
+        <div class="container container-main">
+
+            <div class="row">
+                <div class="col-sm-7 cl-lg-8 right-side">
+                    <div class="header">
+                        <img src="images/TabadulLogo.svg" width="134" />
+
+                        <h1 class="text-white">إنشاء بطاقة دخول جديدة</h1>
+                    </div>
+                    <div class="step step-1  fadeInRight animated faster">
+
+                        <form class="data" id="step1Form" onsubmit="return goStep2();">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل باللغة العربية</label>
+                                <input data-required="true" type="text" class="form-control" id="FullName"
+                                    placeholder="">
+                                <small id="help" class="form-text ">يرجى إدخال الاسم من ثلاث مقاطع</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">المسمى الوظيفي باللغة العربية</label>
+                                <input data-required="true" type="text" class="form-control" id="Position"
+                                    placeholder="">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="nameEnglish">الاسم الكامل باللغة الإنجليزية</label>
+                                <input data-required="true" type="text" class="form-control form-control--en"
+                                    id="FullNameEnglish" placeholder="">
+                                <small id="help" class="form-text ">يرجى إدخال الاسم من ثلاث مقاطع</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">المسمى الوظيفي باللغة الإنجليزية</label>
+                                <input data-required="true" type="text" class="form-control  form-control--en"
+                                    id="PositionEnglish" placeholder="">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="name">الرقم الوظيفي</label>
+                                <input data-required="true" type="text" class="form-control" id="EmployeeNumber"
+                                    placeholder="">
+
+                            </div>
+
+
+                        </form>
+                        <div class="step-footer">
+                            <div class="the_button">
+                                <button type="button" onclick="$('#step1Form').submit()" class="sbt-btn">
+                                    <span>
+                                        المتابعة <span class="icon">></span> </span>
+                                </button>
+                            </div>
+                            <div class="steps-indicator">
+                                <span class="active one"></span>
+                                <span class="two"></span>
+                                <span class="three"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step step-2 hide fadeInRight animated faster">
+
+                        <div class="instructions">
+                            <h5>الرجاء تحميل الصورة حسب المواصفات التالية</h5>
+                            <ul>
+
+                                <li>خلفية بيضاء أو رمادية</li>
+                                <li>إطار الصورة كما هو موضح بالبطاقة هنا</li>
+                                <li>نوع الملف أن يكون PNG JPG </li>
+                            </ul>
+                            <img src="images/card_sample.png" width="218" />
+                        </div>
+                        <div class="upload">
+                            <form runat="server">
+                                <div class="area" ondrop="dropHandler(event);" onclick="$('#imgUpload').click()"
+                                    ondragover="dragOverHandler(event);">
+
+                                    <img src="images/album.svg" width="60" />
+                                    <p>يمكنك سحب الصوره هنا، أو النقر <a href="javascript:void(0);">هنا
+                                            للتحميل</a></p>
+                                    <small>الرجاء التحقق من نوع الملف قبل التحميل</small>
+                                    <br />
+                                    <img id="blah" src="" alt="your image" />
+                                </div>
+                                <input type='file' id="imgUpload" style="display: none;" accept=".png,.jpg,.jpeg" />
+                            </form>
+
+                        </div>
+
+
+                        <div class="step-footer">
+                            <div class="the_button">
+                                <button type="button" class="sbt-btn btn-gray " onclick="goStep(1)">
+                                    <span>
+                                        <span class="icon">
+                                            < </span> تعديل البيانات
+                                        </span>
+                                </button>
+                                <button type="button" class="sbt-btn float-left" onclick="goStep3()">
+                                    <span>
+                                        إستعراض <span class="icon">&gt;</span> </span>
+                                </button>
+                            </div>
+                            <div class="steps-indicator">
+                                <span class="one active"></span>
+                                <span class="two active"></span>
+                                <span class="three"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="step step-3 hide fadeInRight animated faster">
+                        <div class="holder">
+                            <div class="the_card" id="finalCard">
+                                <div class="content">
+                                    <img src="images/the_card.svg" class="the_card--cover" />
+                                    <div class="the_card--profile">
+                                        <img id="imgInCard" />
+                                    </div>
+                                    <div class="information">
+                                        <span class="fullName"><b>فلان بن فلان الفولاني</b></span>
+                                        <span class="position">المسمى الوظيفي</span>
+
+                                        <span class="fullNameEnglish">Folan Al Folani</span>
+                                        <span class="positionEnglish">Job Title</span>
+                                    </div>
+                                    <div class="information information--bottom">
+                                        <span>Employee ID No <b class="EmpNumber">0000</b></span>
+                                        <span>Expiry Date <b class="ExpDate">Sep 2021</b></span>
+                                    </div>
+                                </div>
+                                <br />
+                                <img src="images/card_back.png" width="288" class="card_back" />
+                            </div>
+                        </div>
+
+
+                        <div class="step-footer">
+                            <div class="the_button">
+                                <button type="button" class="sbt-btn btn-gray " onclick="goStep(2)">
+                                    <span>
+                                        <span class="icon">
+                                            < </span> تعديل البيانات
+                                        </span>
+                                </button>
+
+                                <button type="button" class="sbt-btn float-left pdf-btn" onclick="downloadPDF()">
+                                    <span>تحميل الـ PDF</span> <img src="images/Spinner.gif" width="25"
+                                        class="loader " />
+                                </button>
+
+                            </div>
+                            <div class="steps-indicator">
+                                <span class="one active"></span>
+                                <span class="two active"></span>
+                                <span class="three active"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-5 cl-lg-4 sidebar">
+                    <div class="text-white copyright"><span>للمساعدة الرجاء التواصل مع إدارة شؤون الموظفين على</span> <a
+                            href="mailto:hr@tabadul.sa"><span>hr@tabadul.sa</span></a></div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/html2pdf.bundle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
