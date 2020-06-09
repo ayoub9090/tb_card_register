@@ -42,7 +42,7 @@ function goStep2() {
 }
 
 function goStep3() {
-    if ($.trim($('#blah').attr('src')) !== '') {
+    if ($('.cropme_ img').length > 0) {
         if (theData.length > 0) {
             $('.fullName').html(theData[0].fullname)
             $('.fullNameEnglish').html(theData[0].fullnameEnglish)
@@ -133,13 +133,15 @@ function dropHandler(ev) {
                 var file = ev.dataTransfer.items[i].getAsFile();
                 var type = file.type;
                 if (type.indexOf('image') >= 0) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        $('#blah').attr('src', e.target.result);
-                        $('#imgInCard').attr('src', e.target.result);
-                    }
-                    reader.readAsDataURL(file);
+                    /*  var reader = new FileReader();
+                      reader.onload = function (e) {
+                          $('#blah').attr('src', e.target.result);
+                          $('#imgInCard').attr('src', e.target.result);
+                      }
+                      reader.readAsDataURL(file);
+  */
 
+                    imageUpload($('#preview').get(0), true, file);
                 } else {
                     alert('الرجاء التأكد من صيغة الصورة')
                 }
@@ -180,3 +182,6 @@ Dropzone.options.dropzonePhoto = {
         else { done(); }
     }
 };*/
+
+
+$('.cropme').simpleCropper();

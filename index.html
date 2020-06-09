@@ -16,7 +16,7 @@
     <!-- Includes Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
-
+    <link href="vendor/cropper/jquery.Jcrop.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -69,8 +69,8 @@
 
                         </form>
                         <div class="step-footer">
-                            <div class="the_button">
-                                <button type="button" onclick="$('#step1Form').submit()" class="sbt-btn">
+                            <div class="the_button special-btn">
+                                <button type="button" onclick="$('#step1Form').submit()" class="sbt-btn float-left">
                                     <span>
                                         المتابعة <span class="icon">></span> </span>
                                 </button>
@@ -95,9 +95,11 @@
                             </ul>
                             <img src="images/card_sample.png" width="218" />
                         </div>
+
+
                         <div class="upload">
                             <form runat="server">
-                                <div class="area" ondrop="dropHandler(event);" onclick="$('#imgUpload').click()"
+                                <div class="area cropme" ondrop="dropHandler(event);"
                                     ondragover="dragOverHandler(event);">
 
                                     <img src="images/album.svg" width="60" />
@@ -105,17 +107,17 @@
                                             للتحميل</a></p>
                                     <small>الرجاء التحقق من نوع الملف قبل التحميل</small>
                                     <br />
-                                    <img id="blah" src="" alt="your image" />
+                                    <div class="display-image cropme_" style="width: 294px;height:310px;"></div>
                                 </div>
-                                <input type='file' id="imgUpload" style="display: none;" accept=".png,.jpg,.jpeg" />
+
                             </form>
 
                         </div>
 
 
                         <div class="step-footer">
-                            <div class="the_button">
-                                <button type="button" class="sbt-btn btn-gray " onclick="goStep(1)">
+                            <div class="the_button ">
+                                <button type="button" class="sbt-btn btn-gray  " onclick="goStep(1)">
                                     <span>
                                         <span class="icon">
                                             < </span> تعديل البيانات
@@ -139,7 +141,7 @@
                         <div class="holder">
                             <div class="the_card" id="finalCard">
                                 <div class="content">
-                                    <img src="images/the_card.svg" class="the_card--cover" />
+                                    <img src="images/the_card.png" class="the_card--cover" width="294" />
                                     <div class="the_card--profile">
                                         <img id="imgInCard" />
                                     </div>
@@ -156,7 +158,7 @@
                                     </div>
                                 </div>
                                 <br />
-                                <img src="images/card_back.png" width="288" class="card_back" />
+                                <img src="images/card_back.png" class="card_back" width="294" />
                             </div>
                         </div>
 
@@ -201,6 +203,8 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/html2pdf.bundle.js"></script>
+    <script src="vendor/cropper/jquery.Jcrop.js"></script>
+    <script src="vendor/cropper/jquery.SimpleCropper.js"></script>
     <script src="js/script.js"></script>
 </body>
 

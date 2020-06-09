@@ -255,19 +255,21 @@ form.data {
         position: relative;
         display: inline-block;
         margin-top: 20px;
-
+        margin-right: 10px;
     }
 
     &--profile {
         position: absolute;
-        right: 40px;
-        top: 60px;
-        text-align: center;
-        width: 240px;
-        height: 215px;
-
+        right: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 310px;
+        z-index: -1;
 
         img {
+            width: 100%;
+            height: 100%;
             max-width: 100%;
             max-height: 100%;
         }
@@ -279,9 +281,9 @@ form.data {
         }
 
         line-height: 1.4;
-        right:40px;
+        right: 20px;
         position: absolute;
-        bottom: 94px;
+        bottom: 84px;
 
         .position {
             font-size: 14px;
@@ -297,7 +299,7 @@ form.data {
         }
 
         &--bottom {
-            bottom: 36px;
+            bottom: 14px;
             font-size: 13px;
         }
     }
@@ -317,11 +319,111 @@ form.data {
 }
 
 .card_back {
-    border-radius: 8px;
-    margin-right: 20px;
+    margin-top: 20px;
+    margin-right: 10px;
 }
 
 .holder {
     overflow: hidden;
     height: 480px;
+}
+
+
+
+
+
+
+
+#fileInput {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+#modal {
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #5F5F5F;
+    opacity: 0.95;
+    display: none;
+}
+
+#preview {
+    z-index: 11;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: none;
+    border: 4px solid #A5A2A2;
+    border-radius: 4px;
+    float: left;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+#preview .buttons {
+    width: 36px;
+    position: absolute;
+    bottom: 0px;
+    right: -44px;
+}
+
+#preview .buttons .ok {
+    border: 4px solid #F5F5F5;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    line-height: 0px;
+    font-size: 0px;
+    background-image: url('../images/Ok.png');
+    background-repeat: no-repeat;
+}
+
+#preview .buttons .ok:hover {
+    background-image: url('../images/OkGreen.png');
+}
+
+#preview .buttons .cancel {
+    margin-bottom: 4px;
+    border: 4px solid #F5F5F5;
+    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    line-height: 0px;
+    font-size: 0px;
+    background-image: url('../images/Cancel.png');
+    background-repeat: no-repeat;
+}
+
+#preview .buttons .cancel:hover {
+    background-image: url('../images/CancelRed.png');
+}
+
+
+.cropme_ {
+    float: left;
+    background-color: #f1f1f1;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    background-image: url('../images/UploadLight.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.cropme_:hover {
+    background-image: url('../images/UploadDark.png');
+}
+
+.special-btn {
+    width: 100%;
+    display: table;
+
+    @media (min-width: 992px) {
+        max-width: 63%;
+    }
 }
