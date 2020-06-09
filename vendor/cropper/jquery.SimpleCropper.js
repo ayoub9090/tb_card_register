@@ -8,8 +8,8 @@
 
   $.fn.simpleCropper = function () {
 
-    var image_dimension_x = 569;
-    var image_dimension_y = 1136;
+    var image_dimension_x = 569 / 2;
+    var image_dimension_y = 1136 / 2;
     var scaled_width = 0;
     var scaled_height = 0;
     var x1 = 0;
@@ -245,6 +245,7 @@
               onChange: showCoords,
               bgColor: '#747474',
               bgOpacity: .4,
+
               aspectRatio: aspX / aspY,
               setSelect: [0, 0, selection_width, selection_height]
             }, function () {
