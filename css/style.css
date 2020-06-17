@@ -231,12 +231,13 @@ form.data {
     font-size: 14px;
     margin-bottom: 8px; }
   .the_card .information .fullNameEnglish {
-    /*font-size: 16px;*/
-    font-size: 14px;
-    max-width: 76%; }
+    font-size: 16px; }
+  .the_card .information .fittext {
+    width: 201px; }
+  .the_card .information .fittext1 {
+    width: 75%; }
   .the_card .information .positionEnglish {
-    font-size: 14px;
-    max-width: 68%; }
+    font-size: 14px; }
   .the_card .information--bottom {
     top: auto;
     bottom: 14px;

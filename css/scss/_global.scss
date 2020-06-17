@@ -292,14 +292,22 @@ form.data {
         }
 
         .fullNameEnglish {
-            /*font-size: 16px;*/
-            font-size: 14px;
-            max-width: 76%;
+            font-size: 16px;
+
+
+        }
+
+        .fittext {
+            width: 201px;
+        }
+
+        .fittext1 {
+            width: 75%;
         }
 
         .positionEnglish {
             font-size: 14px;
-            max-width: 68%;
+
         }
 
         &--bottom {
