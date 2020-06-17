@@ -221,19 +221,24 @@ form.data {
 
 .the_card .information {
   line-height: 1.4;
-  right: 20px;
+  right: 15px;
+  left: 15px;
   position: absolute;
-  bottom: 84px; }
+  top: 276px; }
   .the_card .information span {
     display: block; }
   .the_card .information .position {
     font-size: 14px;
     margin-bottom: 8px; }
   .the_card .information .fullNameEnglish {
-    font-size: 16px; }
+    /*font-size: 16px;*/
+    font-size: 14px;
+    max-width: 76%; }
   .the_card .information .positionEnglish {
-    font-size: 14px; }
+    font-size: 14px;
+    max-width: 68%; }
   .the_card .information--bottom {
+    top: auto;
     bottom: 14px;
     font-size: 13px; }
 

@@ -281,9 +281,10 @@ form.data {
         }
 
         line-height: 1.4;
-        right: 20px;
+        right: 15px;
+        left: 15px;
         position: absolute;
-        bottom: 84px;
+        top: 276px;
 
         .position {
             font-size: 14px;
@@ -291,14 +292,18 @@ form.data {
         }
 
         .fullNameEnglish {
-            font-size: 16px;
+            /*font-size: 16px;*/
+            font-size: 14px;
+            max-width: 76%;
         }
 
         .positionEnglish {
             font-size: 14px;
+            max-width: 68%;
         }
 
         &--bottom {
+            top: auto;
             bottom: 14px;
             font-size: 13px;
         }
