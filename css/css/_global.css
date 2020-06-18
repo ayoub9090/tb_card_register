@@ -32,11 +32,12 @@ body {
   .right-side {
     padding: 10px 40px; } }
 
-.copyright > span {
-  opacity: 0.92; }
-
-.copyright a {
-  color: #fff; }
+.copyright {
+  text-align: center; }
+  .copyright > span {
+    opacity: 0.92; }
+  .copyright a {
+    color: #fff; }
 
 .step {
   min-height: 682px;
@@ -231,12 +232,13 @@ form.data {
     font-size: 14px;
     margin-bottom: 8px; }
   .the_card .information .fullNameEnglish {
-    /*font-size: 16px;*/
-    font-size: 14px;
-    max-width: 76%; }
+    font-size: 16px; }
+  .the_card .information .fittext {
+    width: 201px; }
+  .the_card .information .fittext1 {
+    width: 75%; }
   .the_card .information .positionEnglish {
-    font-size: 14px;
-    max-width: 68%; }
+    font-size: 14px; }
   .the_card .information--bottom {
     top: auto;
     bottom: 14px;
@@ -339,3 +341,16 @@ form.data {
   @media (min-width: 992px) {
     .special-btn {
       max-width: 63%; } }
+
+input.form-control.form-control-radio {
+  font-size: 3px;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  outline: 0 !important;
+  border: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
+
+.list-of {
+  list-style: none; }

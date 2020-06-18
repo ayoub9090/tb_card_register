@@ -32,11 +32,12 @@ body {
   .right-side {
     padding: 10px 40px; } }
 
-.copyright > span {
-  opacity: 0.92; }
-
-.copyright a {
-  color: #fff; }
+.copyright {
+  text-align: center; }
+  .copyright > span {
+    opacity: 0.92; }
+  .copyright a {
+    color: #fff; }
 
 .step {
   min-height: 682px;
@@ -340,3 +341,16 @@ form.data {
   @media (min-width: 992px) {
     .special-btn {
       max-width: 63%; } }
+
+input.form-control.form-control-radio {
+  font-size: 3px;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  outline: 0 !important;
+  border: 0 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important; }
+
+.list-of {
+  list-style: none; }

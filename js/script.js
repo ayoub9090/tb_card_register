@@ -1,5 +1,5 @@
 var theData = [];
-
+var defaultPhoto = '';
 function goStep2() {
     let isCompleted = true;
 
@@ -41,23 +41,41 @@ function goStep2() {
     return false;
 }
 
-function goStep3() {
-    if ($('.cropme_ img').length > 0) {
-        if (theData.length > 0) {
-            $('.fullName').html(theData[0].fullname)
-            $('.fullNameEnglish').html(theData[0].fullnameEnglish)
-            $('.position').html(theData[0].Position)
-            $('.positionEnglish').html(theData[0].PositionEnglish)
-            $('.EmpNumber').html(fixNumbers(theData[0].EmployeeNumber))
+$('.form-control-radio').change(function () {
+    defaultPhoto = document.querySelector('input[name="imgdefault"]:checked').value;
+    $('#imgInCard').attr('src', defaultPhoto);
+    $('.cropme_').html('<img src="' + defaultPhoto + '" style="width: 294px;height:310px;" />');
+})
 
-        }
-        $('.step-2').addClass('hide');
-        $('.step-3').removeClass('hide');
-        $('.fittext').textfill({ maxFontPixels: 16 });
-        $('.fittext1').textfill({ maxFontPixels: 14 });
+function goStep3() {
+    defaultPhoto = document.querySelector('input[name="imgdefault"]:checked').value;
+
+    if (defaultPhoto !== "") {
+
+        prepareCard();
     } else {
-        alert("الرجاء رفع الصورة للمتابعه")
+        if ($('.cropme_ img').length > 0 && defaultPhoto === "") {
+            prepareCard();
+        } else {
+            alert("الرجاء رفع الصورة للمتابعه")
+        }
     }
+
+}
+
+function prepareCard() {
+    if (theData.length > 0) {
+        $('.fullName').html(theData[0].fullname)
+        $('.fullNameEnglish').html(theData[0].fullnameEnglish)
+        $('.position').html(theData[0].Position)
+        $('.positionEnglish').html(theData[0].PositionEnglish)
+        $('.EmpNumber').html(fixNumbers(theData[0].EmployeeNumber))
+
+    }
+    $('.step-2').addClass('hide');
+    $('.step-3').removeClass('hide');
+    $('.fittext').textfill({ maxFontPixels: 16 });
+    $('.fittext1').textfill({ maxFontPixels: 14 });
 }
 
 function downloadPDF() {
@@ -206,3 +224,7 @@ $('.cropme').simpleCropper();
         return this;
     }
 })(jQuery);
+
+
+
+
